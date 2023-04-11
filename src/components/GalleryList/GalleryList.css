@@ -1,0 +1,21 @@
+
+ 
+
+.galleryContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .galleryItems {
+    margin:  1em;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .imageDescription {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    column-span: all;
+  }

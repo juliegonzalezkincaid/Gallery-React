@@ -1,4 +1,14 @@
 const galleryItems = [
-    { id: 1, path: 'images/goat_small.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 }
+    { id: 1, path: 'images/penink2.png', description: '9x4ft & 6x4ft Pen and Ink "Monster"series.', likes: 0 },
+    { id: 2, path: 'images/blueportrait.png', description: 'Blue Oil on canvas.', likes: 0 },
+    { id: 3, path: 'images/fam.jpeg', description: 'Grandmas 95th birthday.', likes: 0 }, 
+    { id: 4, path: 'images/tattoo.jpeg', description: 'Gave my best friend a tattoo.', likes: 0 },
+    { id: 5, path: 'images/travel.jpg', description: 'Traveling with my husband.', likes: 0 },
+    { id: 6, path: 'images/mientrashayainjusticia.jpeg', description: 'While there is injustice there will never be social peace, oil on canvas.', likes: 0 } 
+    
+    
+    
+    
+
 ];
-{ id: 2, path: 'images/blueportrait.png', description: '.'Blue Oil on canvas , likes: 0 },
+module.exports = galleryItems

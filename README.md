@@ -1,9 +1,23 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
+React Gallery
+# Duration 
+2 Weeks
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+For this application I created a gallery page to share pictures of things that are important to me . Visitors can click on an image to see a description and use a button to "like" an image. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Prerequisites
+- Node.js
+- React
+- Nodemon
+
+# Installation
+1.Running the server code requires `nodemon`. 
+2.If you don't already have `nodemon`, install it globally with `npm install nodemon --global`.
+3.In terminal 
+
+# Usage
+# Built With
+# Acknonledgement
+# Support
