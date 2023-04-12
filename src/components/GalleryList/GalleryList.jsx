@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import GalleryItems from './GalleryItems';
 import './GalleryList.css';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 function GalleryList() {
   const [listOfItems, setListOfItems] = useState([]);
@@ -23,6 +25,7 @@ function GalleryList() {
   }, []);
 
   return (
+    <>
     <div className='galleryContainer'>
       {JSON.stringify(listOfItems)}
       {listOfItems.map((item) => (
@@ -31,11 +34,13 @@ function GalleryList() {
           item={item}
           title={item.title}
           path={item.path}
+          likes={item.likes}
           fetchGalleryList={fetchGalleryList}
          
         />
       ))}
     </div>
+    </>
   );
 }
 
