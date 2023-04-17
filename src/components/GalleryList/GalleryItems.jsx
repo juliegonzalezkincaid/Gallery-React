@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 // import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import CardActions from '@mui/material/CardActions';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Typography } from '@mui/material';
@@ -52,6 +53,7 @@ function GalleryItems ({item, fetchGalleryList}) {
                 <div className="imageDescription">
                     { item.description}
                 </div>
+                <CardActions>
                 <Button 
                 variant="outlined"
                     onClick= {(e) => handleLike(e)}
@@ -65,7 +67,7 @@ function GalleryItems ({item, fetchGalleryList}) {
                 
                     </Typography>
                 </Button> 
-                                                                                                 
+                </CardActions>                                                                                
             </div>
             </CardContent>
             </Card>
@@ -76,30 +78,3 @@ function GalleryItems ({item, fetchGalleryList}) {
 
 export default GalleryItems;
 
-//         <div className="galleryItems">
-
-//             <div 
-//                 onClick= {(e) => setToggle(!toggle)}                       <div className="imageContainer">
-//                     {toggle && item.description}
-//             <img 
-//                src={item.path}>
-//             </img>
-//             <div
-//                 className="imageDescription">
-//                 {item.description}
-//             </div>
-//             {/* <img className="image" src={item.path} 
-//                 onClick={handleLike} /> :
-//                 <p onClick={handleLike} className="description"> 
-//                 {item.description} </p> */}
-//           <Button onClick={(e) => handleLike(e)}
-//                   className= "likeButton"> 
-//                   Like
-//                   {item.like}
-//           </Button> 
-              
-
-                
-//             </div>
-//         </div>
- 
