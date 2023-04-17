@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 // import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import Card from '@mui/material/Card';
@@ -8,18 +8,19 @@ import { Typography } from '@mui/material';
 
 
 function GalleryItems ({item, fetchGalleryList}) {
-     const [likeCount,setLikeCount]= useState(item.like);
+    useEffect(() => {
+        fetchGalleryList();
+      }, []);   
     
 //PUT
     const handleLike = (e) => {
         axios.put(`/gallery/like/${item.id}`)
         .then((response) =>{
-            fetchGalleryList();
-            console.log(response);
-            //Update the item with the new like count
-            item.like =response.data.like;
-            //Update the state variable with the new like count
-            setLikeCount(response.data.like);
+            //  console.log(response);
+            // //Update the item with the new like count
+            // item.like =response.data.like;
+            // //Update the state variable with the new like count
+            // setLikeCount(response.data.like);
             fetchGalleryList();
         }).catch((error) => {
             console.log(`Error in handleLike, ${error}`);
@@ -60,7 +61,7 @@ function GalleryItems ({item, fetchGalleryList}) {
                 <Typography>
               
                 Like
-                <span>{likeCount}</span>
+                <span>{item.likes}</span>
                 
                     </Typography>
                 </Button> 
@@ -74,6 +75,7 @@ function GalleryItems ({item, fetchGalleryList}) {
 }
 
 export default GalleryItems;
+
 //         <div className="galleryItems">
 
 //             <div 

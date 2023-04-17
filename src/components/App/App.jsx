@@ -9,8 +9,7 @@ function App() {
   
   const fetchGalleryData =() =>{
 //GET
-    axios
-    .get('/gallery')
+    axios.get('/gallery')
     .then((response) => {
      console.log("in GET GallleryList", response);
      setGalleryList(response.data);

@@ -26,7 +26,7 @@ function GalleryList() {
   return (
     <>
     <div className='galleryContainer'>
-      {JSON.stringify(listOfItems)}
+      {/* {JSON.stringify(listOfItems)} */}
       {listOfItems.map((item) => (
         <GalleryItems
           key={item.id}
