@@ -20,21 +20,10 @@ function App() {
       alert('Something went wrong in App GET')
     });
   }
-  //PUT for like 
   
-  const likeItems = (item) => {
-    axios
-    .put(`/gallery/like/${item.id}`, item?.likes)
-    .then(() => { 
-      fetchGalleryData ();
-    })
-    .catch((error) => {
-      alert("error in PUT likes")
-  console.log(error);
-})
-  };
+
   useEffect(() => {
-    // fetchGalleryData();
+    fetchGalleryData();
   }, []);
 
     return (
@@ -44,10 +33,12 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <GalleryList
-        likeItems ={likeItems}/>
+        galleryList={galleryList}
+        fetchGalleryData={fetchGalleryData}
+        />
         
       
-        {/* <img src= "images/blueportrait.png"   /> */}
+        
       </div>
     );
 }

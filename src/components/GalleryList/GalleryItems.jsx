@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import React from 'react'
+// import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { Typography } from '@mui/material';
 
 
 function GalleryItems ({item, fetchGalleryList}) {
@@ -11,6 +14,7 @@ function GalleryItems ({item, fetchGalleryList}) {
     const handleLike = (e) => {
         axios.put(`/gallery/like/${item.id}`)
         .then((response) =>{
+            fetchGalleryList();
             console.log(response);
             //Update the item with the new like count
             item.like =response.data.like;
@@ -27,25 +31,51 @@ function GalleryItems ({item, fetchGalleryList}) {
    const [toggle, setToggle] =useState(false);
 
     return (
+
         <div className="galleryItems">
+            <Card sx={{
+                display: 'inline-flex',
+                justifyContent: 'center',
+                border: 2,
+                margin: 2,
+                boxShadow: 10,
+
+            }}>
+                <CardContent>
+                
+
             <div 
                 onClick={(e) => setToggle(!toggle)} 
                 className="imageContainer">
                 <img src={item.path} />
                 <div className="imageDescription">
-                    {toggle && item.description}
+                    { item.description}
                 </div>
                 <Button 
                 variant="outlined"
-                    onClick={handleLike}
+                    onClick= {(e) => handleLike(e)}
+                    // onClick={handleLike}
                     className="likeButton"
                 > 
-                    Like <span>{item.like}</span>
+                <Typography>
+              
+                Like
+                <span>{likeCount}</span>
+                
+                    </Typography>
                 </Button> 
                                                                                                  
             </div>
+            </CardContent>
+            </Card>
         </div>
+
+)
+}
+
+export default GalleryItems;
 //         <div className="galleryItems">
+
 //             <div 
 //                 onClick= {(e) => setToggle(!toggle)}                       <div className="imageContainer">
 //                     {toggle && item.description}
@@ -70,7 +100,4 @@ function GalleryItems ({item, fetchGalleryList}) {
                 
 //             </div>
 //         </div>
-     )
- }
-
-export default GalleryItems;
+ 
